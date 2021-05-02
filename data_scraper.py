@@ -8,14 +8,14 @@ names=['российские авто 1','машины с российскими
 'авто в москве 1','авто на российских дорогах 1','автомобили в томске 1',
 'автомобили в томске 1','авто в москве 6','автомобили в иркутске','авто в россии один']
 
+USER_NAME=''
+YOUR_YANDEX_KEY=''
 t=252
 for x in names[:1]:
   query=x
   query=request.quote(query.encode('cp1251'))
   query=  '+'.join(query.split()) 
-  url="https://yandex.ru/search/xml?user=time221&key=03.113747997:7eb9d0f6f07ea85ae2259e4b1b8deb3c&text="+query+"&from=tabbar&groupby=attr%3Dd.mode%3Ddeep.groups-on-page%3D100.docs-in-group%3D3"
-  # url="https://yandex.com/search/xml?user=rtut654&key=03.114054647:74e0993f14535cb06bb56014df9cc8f3&query=" +
-  # query+"&l10n=en&sortby=tm.order%3Dascending&filter=none&groupby=attr%3Dd.mode%3Ddeep.groups-on-page%3D100.docs-in-group%3D"
+  url="https://yandex.ru/search/xml?user=USER_NAME&key=YOUR_YANDEX_KEY&text="+query+"&from=tabbar&groupby=attr%3Dd.mode%3Ddeep.groups-on-page%3D100.docs-in-group%3D3"
   header={'User-Agent':"MMozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/76.0.3809.100 Chrome/76.0.3809.100 Safari/537.36"}
   http = urllib3.PoolManager()
   req = http.request(method='get',url=url,headers=header)
@@ -27,7 +27,6 @@ for x in names[:1]:
   for i in range(n):
     listimg.append(str(soup.find_all("div",{"class":"serp-item serp-item_type_search serp-item_group_search serp-item_pos_"+str(i)+ " serp-item_scale_yes justifier__item i-bem"})))
     print()
-
 
   #нужно поиграться со split-ами
   k=0
