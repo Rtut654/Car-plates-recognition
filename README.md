@@ -15,9 +15,11 @@ On the next stage we use adjust_perspective() to bring plate back to straight lo
 
 # Technical details:
 
-* YOLO v3 is used as a detector pretrained on Open Images v4 dataset (500 classes).
-* Model is converted to TensorFlow/Keras for ease of use.
-* Processing of one images on CPU takes 5-6 seconds. 
+* YOLO v4 is used as a detector pretrained on Car plates dataset (ypu can find it if /data folder.
+* We use trained Net to segment number in order to find the nodes.
+* 3rd stage includes OpenCV algo to adjust perspective. 
+* Last stage consits of using any library (like pytesseract) to convert straight plate image into string.
+
 * As postprocessing of YOLO output takes a long time (~30-40 seconds for one image on local machine) for all 500 classes I selected only food-related classes (59 classes) information from entire output tensor and sent it to postprocessing block. This procedure decreases processing time to 5-6 seconds per image.
 * YOLO detector is not very accurate, so replacing it with another one (for example, from R-CNN family) or training on larger and more diverst dataset could improve its performance. But excellent performance was not my goal in this pet-project.
 
