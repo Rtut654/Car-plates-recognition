@@ -3,7 +3,9 @@
 This repository contains source code for cars' plates detection and recognition, which can be applied for both video and image data.
 Here is an example:
 
-<img src='images/car_one.jpg' width=320 height=480> <img src='images/car_two.jpg' width=320 height=480>
+<img src='images/9.jpg' width=320 height=480> 
+
+<img src='images/car_two.jpg' width=320 height=480>
 
 
 # Technical details:
