@@ -12,7 +12,7 @@ On the next stage we use adjust_perspective() to bring plate back to straight lo
 
 <img src='images/adjusted.png' width=375 height=94>
 
-Detected license plate Number is:E600EY.
+Detected license plate Number is:E600Ey 60.
 
 # Technical details:
 
